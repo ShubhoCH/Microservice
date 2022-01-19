@@ -34,7 +34,8 @@ cd user-service
 npm start
 ```
 as shown in the following figure: \
-IMAGE
+![Screenshot (522)](https://user-images.githubusercontent.com/53439436/150204383-de98f98e-1ee3-4646-8882-9ad628963c53.png)
+
 
 This will start all the of our microservices at port 5000, 5001 & 5002 respectively.
 
