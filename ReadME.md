@@ -55,7 +55,7 @@ Serving books as content.
 
 ## API's
 
-#### NOTE: Please find the Post-Man collection inside the collection folder of the project!
+#### NOTE: Please find the Post-Man collection inside the PostMan_Collection folder of the project!
 
 ### API routes:
 #### Content-Service:
