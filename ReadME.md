@@ -12,23 +12,23 @@ Clone the project from github then go to project directory inside the project an
 ```bash
 npm install
 ```
-After that open three more CMD Windiows and type the following command into each one respectively:
+After that open three more CMD Windows and type the following command into each one respectively:
 #### NOTE - Make sure you run RabbitMQ first before running any service:
-1st Window
+1st CMD Window
 ```bash
 docker run -p 5672:5672 rabbitmq
 ```
-2nd Window
+2nd CMD Window
 ```bash
 cd content-service
 npm start
 ```
-3rd Window
+3rd CMD Window
 ```bash
 cd user-interaction-service
 npm start
 ```
-4th Window
+4th CMD Window
 ```bash
 cd user-service
 npm start
@@ -54,37 +54,134 @@ Serving books as content.
 ### User service
 - REST API's for CRUD operations on user.[First name, last name, email_id, phone number]
 
-## API's
+## API's routes:
 
 #### NOTE: Please find the Post-Man collection inside the PostMan_Collection folder of the project!
+### Content-Service:
+#### Testing API (For Data Ingestion via CSV)
+- http://localhost:5001/content/testing
+```bash
+POST Request:
+```
 
-### API routes:
-#### Content-Service:
-- Testing API (For Data Ingestion via CSV):
-    * http://localhost:5001/content/testing
-- New Content (Contents sorted in the order of creation):
-    * http://localhost:5001/content/new-content
-- Top Content (Contents sorted in the decreasing order of Interactions):
-    * http://localhost:5001/content/top-content
-- Add New Story (If Authenticated):
-    * http://localhost:5001/content/create
-- Delete Content (If Owner):
-    * http://localhost:5001/content/delete
+#### New Content (Contents sorted in the order of creation)
+- http://localhost:5001/content/new-content
+```bash
+GET Request:
+```
 
-#### User-Interaction-Service:
-- Like (If Authenticated):
-    * http://localhost:5002/interact/like
-- Read (If Authenticated):
-    * http://localhost:5002/interact/read
-- List All Interactions:
-    * http://localhost:5002/interact/get_all_interaction
+#### Top Content (Contents sorted in the decreasing order of Interactions)
+- http://localhost:5001/content/top-content
+```bash
+GET Request:
+```
 
-#### User-Service:
-- User Register:
-    * http://localhost:5000/user/register
-- User Login:
-    * http://localhost:5000/user/login
-- Delete User (If Authenticated & Owner):
-    * http://localhost:5000/user/delete
-- List All Users:
-    * http://localhost:5000/user/list_all
+#### Add New Story (If Authenticated)
+- http://localhost:5001/content/create
+```bash
+POST Request:
+
+Headers:
+Authorization -> Bearer <TOKEN>
+
+Body -> raw -> json:
+{
+    "title": "TESTING_09",
+    "story": "STORY_09"
+}
+```
+
+#### Delete Content (If Owner)
+- http://localhost:5001/content/delete
+```bash
+POST Request:
+
+Headers:
+Authorization -> Bearer <TOKEN>
+
+Body -> raw -> json:
+{
+    "contentID": "<contentID>"
+}
+```
+
+### User-Interaction-Service:
+#### Like (If Authenticated):
+- http://localhost:5002/interact/like
+```bash
+POST Request:
+
+Headers:
+Authorization -> Bearer <TOKEN>
+
+Body -> raw -> json:
+{
+    "contentID": "<contentID>"
+}
+```
+
+#### Read (If Authenticated):
+- http://localhost:5002/interact/read
+```bash
+POST Request:
+
+Headers:
+Authorization -> Bearer <TOKEN>
+
+Body -> raw -> json:
+{
+    "contentID": "<contentID>"
+}
+```
+
+#### List All Interactions:
+- http://localhost:5002/interact/get_all_interaction
+```bash
+GET Request:
+```
+
+### User-Service:
+#### User Register:
+- http://localhost:5000/user/register
+```bash
+POST Request:
+
+Body -> raw -> json:
+{
+    "firstName": "Test",
+    "lastName": "One",
+    "email": "Test2@gmail.com",
+    "phone": "9999999999",
+    "password": "123"
+}
+```
+#### User Login:
+- http://localhost:5000/user/login
+```bash
+POST Request:
+
+Body -> raw -> json:
+{
+    "email": "<email>",
+    "password": "<password>"
+}
+```
+#### Delete User (If Authenticated & Owner):
+- http://localhost:5000/user/delete
+```bash
+POST Request:
+
+Headers:
+Authorization -> Bearer <TOKEN>
+
+Body -> raw -> json:
+{
+    "email": "<email>",
+    "password": "<password>"
+}
+```
+#### List All Users:
+- http://localhost:5000/user/list_all
+```bash
+GET Request:
+```
