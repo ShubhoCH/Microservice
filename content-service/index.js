@@ -182,6 +182,10 @@ app.listen(5001, () => {
 //         {title: 'Title2', story: 'story2', userID: 'user1@gmail.com', contentID: 'user1_2', date: '2022-01-15T18:30:00.000+00:00'},
 //         {title: 'Title3', story: 'story3', userID: 'user2@gmail.com', contentID: 'user2_1', date: '2022-01-12T18:30:00.000+00:00'},
 //         {title: 'Title4', story: 'story4', userID: 'user3@gmail.com', contentID: 'user3_1', date: '2022-01-16T18:30:00.000+00:00'},
+//         {title: 'Title5', story: 'story5', userID: 'user4@gmail.com', contentID: 'user4_1', date: '2022-01-08T18:30:00.000+00:00'},
+//         {title: 'Title6', story: 'story6', userID: 'user5@gmail.com', contentID: 'user5_2', date: '2022-01-15T18:30:00.000+00:00'},
+//         {title: 'Title7', story: 'story7', userID: 'user6@gmail.com', contentID: 'user6_1', date: '2022-01-06T18:30:00.000+00:00'},
+//         {title: 'Title8', story: 'story8', userID: 'user7@gmail.com', contentID: 'user7_1', date: '2022-01-05T18:30:00.000+00:00'},
 // ];
  
 // csvWriter.writeRecords(records)       // returns a promise
@@ -192,4 +196,3 @@ app.listen(5001, () => {
 
 
 // docker run -p 5672:5672 rabbitmq
-// docker container ls
