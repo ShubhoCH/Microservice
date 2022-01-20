@@ -21,20 +21,25 @@ docker run -p 5672:5672 rabbitmq
 2nd CMD Window
 ```bash
 cd content-service
+npm i
 npm start
 ```
 3rd CMD Window
 ```bash
 cd user-interaction-service
+npm i
 npm start
 ```
 4th CMD Window
 ```bash
 cd user-service
+npm i
 npm start
 ```
 as shown in the following figure: \
-![Screenshot (522)](https://user-images.githubusercontent.com/53439436/150204383-de98f98e-1ee3-4646-8882-9ad628963c53.png)
+
+![Screenshot (524)](https://user-images.githubusercontent.com/53439436/150294644-bab0bc56-9039-4273-b423-41be8814d29b.png)
+
 
 
 This will start all the of our microservices at port 5000, 5001 & 5002 respectively.
