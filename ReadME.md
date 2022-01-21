@@ -1,5 +1,4 @@
 # Microservices:
-![Untitled Diagram](https://user-images.githubusercontent.com/53439436/150290432-b190e655-68d1-4406-81cb-20609dd487b6.jpg)
 
 ## Prerequisite
 - Docker
